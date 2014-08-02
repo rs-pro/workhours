@@ -30,7 +30,7 @@ Initialization:
 
     # custom hours or days
     week = Workhours::Week.new(open: '12:00', close: '20:00', week: %w(mon tue fri sat))
-    week = Workhours::Week.new(holidays: [Date.parse('2014-01-01')], week: Workhours::ALL_WEEK)
+    week = Workhours::Week.new(holidays: [Date.parse('2014-01-01')], week: Workhours::ALL_DAYS)
     # fully custom work hours
     week = Workhours::Week.new(hours: ['mon 12:00-15:10', 'mon 15:00-16:00'])
 
