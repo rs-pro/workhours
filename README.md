@@ -1,3 +1,6 @@
+[![Build Status](https://travis-ci.org/rs-pro/workhours.svg)](https://travis-ci.org/rs-pro/workhours)
+[![Dependency Status](https://www.versioneye.com/user/projects/53e73e7635080d62b2000072/badge.svg?style=flat)](https://www.versioneye.com/user/projects/53e73e7635080d62b2000072)
+
 # Workhours
 
 Gem to calculate *buisness hours*, things like .is_open?, .is_closed?, .opens_at, .closes_at
