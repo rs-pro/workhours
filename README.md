@@ -1,5 +1,9 @@
 [![Build Status](https://travis-ci.org/rs-pro/workhours.svg)](https://travis-ci.org/rs-pro/workhours)
-[![Dependency Status](https://www.versioneye.com/user/projects/53e73e7635080d62b2000072/badge.svg?style=flat)](https://www.versioneye.com/user/projects/53e73e7635080d62b2000072)
+[![Dependency Status](https://www.versioneye.com/user/projects/53e73e7635080d62b2000072/badge.svg)](https://www.versioneye.com/user/projects/53e73e7635080d62b2000072)
+[![Gem version](http://img.shields.io/gem/v/workhours.svg)](http://rubygems.org/gems/workhours)
+[![Issues](http://img.shields.io/github/issues/rs-pro/workhours.svg)](https://github.com/rs-pro/workhours/issues)
+[![License](http://img.shields.io/:license-mit-blue.svg)](https://github.com/rs-pro/workhours/blob/master/LICENSE.txt)
+
 
 # Workhours
 
