@@ -184,7 +184,6 @@ describe 'Workhours' do
         week.is_open?(Time.parse('2014-08-04 0:00')).should eq(false)
         week.is_open?(Time.parse('2014-08-04 12:00')).should eq(true)
         week.is_open?(Time.parse('2014-08-04 12:01')).should eq(true)
-        week.is_open?(Time.parse('2014-08-04 12:01')).should eq(true)
         week.is_open?(Time.parse('2014-08-04 23:00')).should eq(true)
         week.is_open?(Time.parse('2014-08-05 00:00')).should eq(true)
         week.is_open?(Time.parse('2014-08-05 03:00')).should eq(true)
@@ -202,6 +201,37 @@ describe 'Workhours' do
       end
       it '#closes_at' do
         week.closes_at(Time.parse('2014-08-04 14:00')).should eq(Time.parse('2014-08-05 04:00'))
+        week.closes_at(Time.parse('2014-08-05 10:00')).should be_nil
+      end
+    end
+
+
+    describe 'whole the day' do
+      let(:week) { Workhours::Week.new(hours: ['mon 00:00-00:00']) }
+
+      it '#is_open?' do
+        week.is_open?(Time.parse('2014-08-03 10:00')).should eq(false)
+        week.is_open?(Time.parse('2014-08-04 00:00')).should eq(true)
+        week.is_open?(Time.parse('2014-08-04 12:00')).should eq(true)
+        week.is_open?(Time.parse('2014-08-04 12:01')).should eq(true)
+        week.is_open?(Time.parse('2014-08-04 23:00')).should eq(true)
+        week.is_open?(Time.parse('2014-08-05 00:00')).should eq(false)
+        week.is_open?(Time.parse('2014-08-05 03:00')).should eq(false)
+        week.is_open?(Time.parse('2014-08-05 04:00')).should eq(false)
+        week.is_open?(Time.parse('2014-08-05 04:01')).should eq(false)
+      end
+
+      it '#opens_at' do
+        week.opens_at(Time.parse('2014-08-03 10:00')).should eq(Time.parse('2014-08-04 00:00'))
+        week.opens_at(Time.parse('2014-08-04 00:00')).should be_nil
+        week.opens_at(Time.parse('2014-08-04 16:00')).should be_nil
+        week.opens_at(Time.parse('2014-08-04 23:00')).should be_nil
+        week.opens_at(Time.parse('2014-08-05 00:00')).should eq(Time.parse('2014-08-11 00:00'))
+        week.opens_at(Time.parse('2014-08-05 10:00')).should eq(Time.parse('2014-08-11 00:00'))
+      end
+
+      it '#closes_at' do
+        week.closes_at(Time.parse('2014-08-04 14:00')).should eq(Time.parse('2014-08-05 00:00'))
         week.closes_at(Time.parse('2014-08-05 10:00')).should be_nil
       end
     end
@@ -232,4 +262,3 @@ describe 'Workhours' do
     end
   end
 end
-
