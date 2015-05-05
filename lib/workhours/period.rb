@@ -16,6 +16,7 @@ module Workhours
     end
 
     def is_inside_range?(tod)
+      return true if shift.beginning.second_of_day == 0 && shift.ending.second_of_day == 0
       shift.include?(tod)
     end
 
@@ -56,7 +57,8 @@ module Workhours
       else
         if tod.second_of_day == 0 && ending.second_of_day == 0 && is_tomorrow?(time)
           # 10:00-0:00 is active on 0:00 of next day
-          true
+          # 00:00-0:00 is NOT active on 0:00 of next day
+          beginning.second_of_day != 0
         else
           false
         end
