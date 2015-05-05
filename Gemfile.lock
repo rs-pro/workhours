@@ -1,7 +1,7 @@
 PATH
   remote: .
   specs:
-    workhours (0.0.2)
+    workhours (0.1.0)
       tod
 
 GEM
@@ -9,27 +9,28 @@ GEM
   specs:
     diff-lcs (1.2.5)
     docile (1.1.5)
-    multi_json (1.10.1)
-    rake (10.3.2)
-    rspec (3.0.0)
-      rspec-core (~> 3.0.0)
-      rspec-expectations (~> 3.0.0)
-      rspec-mocks (~> 3.0.0)
-    rspec-core (3.0.3)
-      rspec-support (~> 3.0.0)
-    rspec-expectations (3.0.3)
+    json (1.8.2)
+    rake (10.4.2)
+    rspec (3.2.0)
+      rspec-core (~> 3.2.0)
+      rspec-expectations (~> 3.2.0)
+      rspec-mocks (~> 3.2.0)
+    rspec-core (3.2.3)
+      rspec-support (~> 3.2.0)
+    rspec-expectations (3.2.1)
       diff-lcs (>= 1.2.0, < 2.0)
-      rspec-support (~> 3.0.0)
-    rspec-mocks (3.0.3)
-      rspec-support (~> 3.0.0)
-    rspec-support (3.0.3)
-    simplecov (0.9.0)
+      rspec-support (~> 3.2.0)
+    rspec-mocks (3.2.1)
+      diff-lcs (>= 1.2.0, < 2.0)
+      rspec-support (~> 3.2.0)
+    rspec-support (3.2.2)
+    simplecov (0.10.0)
       docile (~> 1.1.0)
-      multi_json
-      simplecov-html (~> 0.8.0)
-    simplecov-html (0.8.0)
-    timecop (0.7.1)
-    tod (1.4.0)
+      json (~> 1.8)
+      simplecov-html (~> 0.10.0)
+    simplecov-html (0.10.0)
+    timecop (0.7.3)
+    tod (2.0.0)
 
 PLATFORMS
   ruby
