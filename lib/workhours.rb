@@ -1,6 +1,7 @@
 require "workhours/version"
 
 require 'tod'
+require 'tod/core_extensions'
 require "workhours/week"
 require "workhours/period"
 require "workhours/util"
