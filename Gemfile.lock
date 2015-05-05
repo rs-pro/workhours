@@ -2,7 +2,7 @@ PATH
   remote: .
   specs:
     workhours (0.1.0)
-      tod
+      tod (~> 2.0)
 
 GEM
   remote: https://rubygems.org/

@@ -31,8 +31,8 @@ module Workhours
           else
             pr = h.split(' ')
             times = pr[1].split('-')
-            beginning = TimeOfDay.parse(times[0])
-            ending = TimeOfDay.parse(times[1])
+            beginning = Tod::TimeOfDay.parse(times[0])
+            ending = Tod::TimeOfDay.parse(times[1])
             if ending < beginning
               [Workhours::Period.new(pr[0], times[0], "0:00"), Workhours::Period.new(Workhours.next_day(pr[0]), "0:00", times[1])]
             else

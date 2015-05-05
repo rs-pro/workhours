@@ -3,12 +3,12 @@ module Workhours
     attr_accessor :wday, :shift
     def initialize(wday, beginning, ending)
       @wday = wday
-      beginning = TimeOfDay.parse(beginning) unless beginning.is_a?(TimeOfDay)
-      ending = TimeOfDay.parse(ending) unless ending.is_a?(TimeOfDay)
+      beginning = Tod::TimeOfDay.parse(beginning) unless beginning.is_a?(Tod::TimeOfDay)
+      ending = Tod::TimeOfDay.parse(ending) unless ending.is_a?(Tod::TimeOfDay)
       if ending.second_of_day != 0 && ending < beginning
         raise MultidayPeriodError.new()
       end
-      @shift = Shift.new(beginning, ending)
+      @shift = Tod::Shift.new(beginning, ending)
     end
 
     def inspect
