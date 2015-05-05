@@ -91,6 +91,15 @@ describe 'Workhours' do
         week = Workhours::Week.new(hours: ['mon 15:00-16:00', 'mon 12:00-15:10'])
         week.hours_overlap?.length.should eq(2)
         week.hours_overlap?.should be_truthy
+        week = Workhours::Week.new(hours: ['mon 15:00-16:00', 'mon 00:00-00:00'])
+        week.hours_overlap?.length.should eq(2)
+        week.hours_overlap?.should be_truthy
+        week = Workhours::Week.new(hours: ['mon 00:00-00:00', 'mon 15:00-16:00'])
+        week.hours_overlap?.length.should eq(2)
+        week.hours_overlap?.should be_truthy
+        week = Workhours::Week.new(hours: ['mon 00:00-00:00', 'mon 00:00-00:00'])
+        week.hours_overlap?.length.should eq(2)
+        week.hours_overlap?.should be_truthy
 
         week = Workhours::Week.new(hours: ['mon 12:00-15:00', 'mon 15:00-16:00'])
         week.hours_overlap?.should eq(false)
@@ -259,6 +268,7 @@ describe 'Workhours' do
         holidays: [],
         week: %w(mon tue wed thu fri)
       })
+
     end
   end
 end
