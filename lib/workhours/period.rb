@@ -68,12 +68,14 @@ module Workhours
     def to_s
       "#{wday} #{beginning.to_s}-#{ending.to_s}"
     end
-    
+
     def overlaps?(other_day)
       if wday != other_day.wday
-        return false 
+        return false
       end
-      
+
+      return true if other_day.shift.beginning.second_of_day == 0 && other_day.shift.ending.second_of_day == 0
+
       open_inside = beginning > other_day.beginning && beginning < other_day.ending
       close_inside = ending > other_day.beginning && ending < other_day.ending
       outside = beginning < other_day.beginning && ending > other_day.ending
