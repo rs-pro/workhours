@@ -107,6 +107,30 @@ describe 'Workhours' do
         week.hours_overlap?.should eq(false)
       end
 
+      describe 'with closing time at 0:00' do
+        let(:week) { Workhours::Week.new(hours: ['mon 12:00-0:00']) }
+        it 'is open on monday at given hours' do
+          week.is_open?(Time.parse('2014-08-04 10:00')).should eq(false)
+          week.is_open?(Time.parse('2014-08-04 10:00')).should eq(false)
+          week.is_open?(Time.parse('2014-08-04 11:59')).should eq(false)
+          week.is_open?(Time.parse('2014-08-04 12:00')).should eq(true)
+          week.is_open?(Time.parse('2014-08-04 12:01')).should eq(true)
+          week.is_open?(Time.parse('2014-08-04 15:00')).should eq(true)
+          week.is_open?(Time.parse('2014-08-04 15:01')).should eq(true)
+          week.is_open?(Time.parse('2014-08-04 16:00')).should eq(true)
+          week.is_open?(Time.parse('2014-08-04 16:01')).should eq(true)
+          week.is_open?(Time.parse('2014-08-04 23:59')).should eq(true)
+          week.is_open?(Time.parse('2014-08-05 0:00')).should eq(true)
+          week.is_open?(Time.parse('2014-08-05 0:01')).should eq(false)
+          week.is_open?(Time.parse('2014-08-05 1:01')).should eq(false)
+          week.is_open?(Time.parse('2014-08-05 15:00')).should eq(false)
+          week.is_open?(Time.parse('2014-08-05 23:59')).should eq(false)
+          week.is_open?(Time.parse('2014-08-06 15:30')).should eq(false)
+          week.is_open?(Time.parse('2014-08-06 16:00')).should eq(false)
+        end
+
+      end
+
       describe 'with mon and two periods' do
         let(:week) { Workhours::Week.new(hours: ['mon 12:00-15:00', 'mon 15:00-16:00']) }
 

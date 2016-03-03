@@ -34,7 +34,11 @@ module Workhours
             beginning = Tod::TimeOfDay.parse(times[0])
             ending = Tod::TimeOfDay.parse(times[1])
             if ending < beginning
-              [Workhours::Period.new(pr[0], times[0], "0:00"), Workhours::Period.new(Workhours.next_day(pr[0]), "0:00", times[1])]
+              if ending.second_of_day == 0
+                Workhours::Period.new(pr[0], times[0], "0:00")
+              else
+                [Workhours::Period.new(pr[0], times[0], "0:00"), Workhours::Period.new(Workhours.next_day(pr[0]), "0:00", times[1])]
+              end
             else
               Workhours::Period.new(pr[0], times[0], times[1])
             end
