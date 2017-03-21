@@ -1,7 +1,7 @@
 PATH
   remote: .
   specs:
-    workhours (0.3.0)
+    workhours (0.4.0)
       tod (~> 2.1)
 
 GEM
