@@ -7,9 +7,9 @@
 
 # Workhours
 
-Gem to calculate *buisness hours*, things like .is_open?, .is_closed?, .opens_at, .closes_at
+Gem to calculate *business hours*, things like .is_open?, .is_closed?, .opens_at, .closes_at
 
-Some code based on [buisness_time](https://github.com/bokmann/business_time) gem which unfortuanately handles all
+Some code based on [business_time](https://github.com/bokmann/business_time) gem which unfortuanately handles all
 configs globally and is buggy.
 
 Uses ```tod``` gem to properly handle parsing and math with TimeOfDay (time without date).

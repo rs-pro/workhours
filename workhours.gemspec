@@ -8,7 +8,7 @@ Gem::Specification.new do |spec|
   spec.version       = Workhours::VERSION
   spec.authors       = ["glebtv"]
   spec.email         = ["glebtv@gmail.com"]
-  spec.summary       = %q{Gem to calculate buisness hours}
+  spec.summary       = %q{Gem to calculate business hours}
   spec.description   = %q{}
   spec.homepage      = "https://github.com/rs-pro/workhours"
   spec.license       = "MIT"
