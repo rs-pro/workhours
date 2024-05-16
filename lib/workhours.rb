@@ -7,7 +7,7 @@ require "workhours/period"
 require "workhours/util"
 
 module Workhours
-  ALL_DAYS = ::Time::RFC2822_DAY_NAME.map(&:downcase)
+  ALL_DAYS = ["sun", "mon", "tue", "wed", "thu", "fri", "sat"]
 
   extend Util
 

@@ -1,42 +1,42 @@
 PATH
   remote: .
   specs:
-    workhours (0.5.0)
-      tod (~> 2.1)
+    workhours (0.6.0)
+      tod
 
 GEM
   remote: https://rubygems.org/
   specs:
-    diff-lcs (1.3)
-    docile (1.3.2)
-    json (2.2.0)
-    rake (13.0.0)
-    rspec (3.8.0)
-      rspec-core (~> 3.8.0)
-      rspec-expectations (~> 3.8.0)
-      rspec-mocks (~> 3.8.0)
-    rspec-core (3.8.2)
-      rspec-support (~> 3.8.0)
-    rspec-expectations (3.8.4)
+    diff-lcs (1.5.1)
+    docile (1.4.0)
+    rake (13.2.1)
+    rspec (3.13.0)
+      rspec-core (~> 3.13.0)
+      rspec-expectations (~> 3.13.0)
+      rspec-mocks (~> 3.13.0)
+    rspec-core (3.13.0)
+      rspec-support (~> 3.13.0)
+    rspec-expectations (3.13.0)
       diff-lcs (>= 1.2.0, < 2.0)
-      rspec-support (~> 3.8.0)
-    rspec-mocks (3.8.1)
+      rspec-support (~> 3.13.0)
+    rspec-mocks (3.13.1)
       diff-lcs (>= 1.2.0, < 2.0)
-      rspec-support (~> 3.8.0)
-    rspec-support (3.8.2)
-    simplecov (0.17.1)
+      rspec-support (~> 3.13.0)
+    rspec-support (3.13.1)
+    simplecov (0.22.0)
       docile (~> 1.1)
-      json (>= 1.8, < 3)
-      simplecov-html (~> 0.10.0)
-    simplecov-html (0.10.2)
-    timecop (0.9.1)
-    tod (2.2.0)
+      simplecov-html (~> 0.11)
+      simplecov_json_formatter (~> 0.1)
+    simplecov-html (0.12.3)
+    simplecov_json_formatter (0.1.4)
+    timecop (0.9.8)
+    tod (3.1.2)
 
 PLATFORMS
   ruby
 
 DEPENDENCIES
-  bundler (~> 1.14)
+  bundler
   rake
   rspec
   simplecov
@@ -44,4 +44,4 @@ DEPENDENCIES
   workhours!
 
 BUNDLED WITH
-   1.17.3
+   2.5.9
